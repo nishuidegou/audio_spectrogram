@@ -20,10 +20,12 @@ numpy.set_printoptions(threshold=2048)
 
 def callback(in_data, frame_count, time_info, status):
     format_data = numpy.fromstring(in_data,'int16')
-    print(len(format_data))
-    print(format_data)
-    time.sleep(5)
-    return (in_data, pyaudio.paContinue)
+    #print(len(format_data))
+    #print(format_data)
+    #time.sleep(5)
+    #--call pytorch to process the data
+    #return (in_data, pyaudio.paContinue)
+    return (in_data,pyaudio.paContinue)
 
 stream = p.open(format=p.get_format_from_width(WIDTH),
                 channels=CHANNELS,
